@@ -12,10 +12,10 @@ router.get('/:id', async (req, res) => {
       _id: user._id,
       username: user.username,
       email: user.email,
-      balance: user.balance || 0, // optional: balance field if present in model
+      // add other fields as needed
     });
   } catch (err) {
-    console.error('User Fetch Error:', err.message);
+    console.error('User fetch error:', err);
     res.status(500).json({ message: 'Server error' });
   }
 });
